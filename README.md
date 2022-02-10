@@ -1,2 +1,2 @@
 # tkinter_kg_converter_gui
-GUI to convert Kg to g, lb, oz
+Create a GUI using Tkinter to convert Kg to grams, pounds, and ounces
