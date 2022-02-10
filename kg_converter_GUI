@@ -1,0 +1,50 @@
+from tkinter import *
+
+# Create empty Tkinter window
+window = Tk()
+    
+# Function to convert grams, pounds, and ounces to kg
+def to_kg():
+    gram = float(e2_value.get())*1000
+    pound = float(e2_value.get())*2.20462
+    ounce = float(e2_value.get())*35.274
+    
+    # Clear text boxes if there are values from previous calls     
+    t1.delete('1.0', END)
+    t1.insert(END, gram)
+    
+    t2.delete('1.0', END)
+    t2.insert(END, pound)
+    
+    t3.delete('1.0', END)
+    t3.insert(END, ounce)
+
+# Create a label
+e1 = Label(window, text='Kg')
+e1.grid(row=0, column=0)
+
+e2_value = StringVar() # Create stringvar onject
+e2 = Entry(window, textvariable = e2_value) # Create entry box
+e2.grid(row=0, column=1)
+
+# Create a widget button
+b1 = Button(window, text='Convert', command=to_kg)
+b1.grid(row=0, column=2)
+
+# Create empty text boxes
+t1l = Label(window, text='Gram')
+t1l.grid(row=1, column=0)
+t1 = Text(window, height=1, width=20)
+t1.grid(row=1, column=1)
+
+t2l = Label(window, text='Pound')
+t2l.grid(row=2, column=0)
+t2 = Text(window, height=1, width=20)
+t2.grid(row=2, column=1)
+
+t3l = Label(window, text='Ounce')
+t3l.grid(row=3, column=0)
+t3 = Text(window, height=1, width=20)
+t3.grid(row=3, column=1)
+
+window.mainloop()
